@@ -22,14 +22,19 @@ public class MyBot extends Bot {
      */
     @Override
     public void doTurn() {
-        Ants ants = getAnts();
-        for (Tile myAnt : ants.getMyAnts()) {
+        GameDataHandler gameDataHandler = getAnts();
+        for (Tile myAnt : gameDataHandler.getMyAnts()) {
             for (Aim direction : Aim.values()) {
-                if (ants.getIlk(myAnt, direction).isPassable()) {
-                    ants.issueOrder(myAnt, direction);
+                if (myAnt.get(direction).isPassable()) {
+                    gameDataHandler.issueOrder(myAnt, direction);
                     break;
                 }
             }
         }
     }
+
+	@Override
+	public void afterUpdate()
+	{
+	}
 }

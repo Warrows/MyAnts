@@ -2,7 +2,7 @@ package fr.warrows.java.aichallenge;
 /**
  * Represents type of tile on the game map.
  */
-public enum Ilk {
+public enum TileType {
     /** Water tile. */
     WATER,
     
@@ -19,7 +19,11 @@ public enum Ilk {
     MY_ANT,
     
     /** Enemy ant tile. */
-    ENEMY_ANT;
+    ENEMY_ANT,
+    
+    MY_HILL,
+    
+    ENEMY_HILL;
     
     /**
      * Checks if this type of tile is passable, which means it is not a water tile.
