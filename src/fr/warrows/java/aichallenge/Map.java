@@ -21,7 +21,6 @@ public class Map
 		for (int row = 0; row < nbRows; row++)
 			for (int col = 0; col < nbCols; col++)
 			{
-				System.err.println((row - 1) % nbRows);
 				tiles[row][col].setNorth(tiles[(nbRows + row - 1) % nbRows][col]);
 				tiles[row][col].setSouth(tiles[(row + 1) % nbRows][col]);
 				tiles[row][col].setWest(tiles[row][(nbCols + col - 1) % nbCols]);

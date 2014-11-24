@@ -31,7 +31,7 @@ public enum TileType {
      * @return <code>true</code> if this is not a water tile, <code>false</code> otherwise
      */
     public boolean isPassable() {
-        return ordinal() > WATER.ordinal();
+        return ordinal() > WATER.ordinal() || this == MY_ANT || this == MY_HILL;
     }
     
     /**
