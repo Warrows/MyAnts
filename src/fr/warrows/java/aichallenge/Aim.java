@@ -1,5 +1,4 @@
-package myia;
-
+package fr.warrows.java.aichallenge;
 import java.util.HashMap;
 import java.util.Map;
 

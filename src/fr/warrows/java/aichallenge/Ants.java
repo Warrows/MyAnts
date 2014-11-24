@@ -1,5 +1,4 @@
-package myia;
-
+package fr.warrows.java.aichallenge;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -279,14 +278,8 @@ public class Ants {
      * 
      * @return a set containing all my hills locations
      */
-    public Set<Tile> getMyHills() 
-    {
-    	Set<Tile> retour = new HashSet<Tile>();
-    	for (Tile t : myHills)
-    		{
-    			retour.add(t);
-    		}
-        return retour;
+    public Set<Tile> getMyHills() {
+        return myHills;
     }
 
     /**
@@ -323,7 +316,7 @@ public class Ants {
      *
      * @return true if the location is visible
      */
-	public boolean isVisible(Tile tile) {
+    public boolean isVisible(Tile tile) {
         return visible[tile.getRow()][tile.getCol()];
     }
 

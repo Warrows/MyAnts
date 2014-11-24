@@ -1,5 +1,4 @@
-package myia;
-
+package fr.warrows.java.aichallenge;
 /**
  * Provides basic game state handling.
  */

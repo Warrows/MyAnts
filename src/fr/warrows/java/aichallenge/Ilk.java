@@ -1,5 +1,4 @@
-package myia;
-
+package fr.warrows.java.aichallenge;
 /**
  * Represents type of tile on the game map.
  */

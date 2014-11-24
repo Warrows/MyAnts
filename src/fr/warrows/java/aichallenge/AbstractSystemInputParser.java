@@ -1,8 +1,7 @@
-package myia;
-
+package fr.warrows.java.aichallenge;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
@@ -80,39 +79,39 @@ public abstract class AbstractSystemInputParser extends AbstractSystemInputReade
             if (line.isEmpty()) {
                 continue;
             }
-            StringTokenizer scanner = new StringTokenizer(line);
-            if (!scanner.hasMoreTokens()) {
+            Scanner scanner = new Scanner(line);
+            if (!scanner.hasNext()) {
                 continue;
             }
-            String token = scanner.nextToken().toUpperCase();
+            String token = scanner.next().toUpperCase();
             if (!SetupToken.PATTERN.matcher(token).matches()) {
                 continue;
             }
             SetupToken setupToken = SetupToken.valueOf(token);
             switch (setupToken) {
                 case LOADTIME:
-                    loadTime = Integer.parseInt(scanner.nextToken());
+                    loadTime = scanner.nextInt();
                 break;
                 case TURNTIME:
-                    turnTime = Integer.parseInt(scanner.nextToken());
+                    turnTime = scanner.nextInt();
                 break;
                 case ROWS:
-                    rows = Integer.parseInt(scanner.nextToken());
+                    rows = scanner.nextInt();
                 break;
                 case COLS:
-                    cols = Integer.parseInt(scanner.nextToken());
+                    cols = scanner.nextInt();
                 break;
                 case TURNS:
-                    turns = Integer.parseInt(scanner.nextToken());
+                    turns = scanner.nextInt();
                 break;
                 case VIEWRADIUS2:
-                    viewRadius2 = Integer.parseInt(scanner.nextToken());
+                    viewRadius2 = scanner.nextInt();
                 break;
                 case ATTACKRADIUS2:
-                    attackRadius2 = Integer.parseInt(scanner.nextToken());
+                    attackRadius2 = scanner.nextInt();
                 break;
                 case SPAWNRADIUS2:
-                    spawnRadius2 = Integer.parseInt(scanner.nextToken());
+                    spawnRadius2 = scanner.nextInt();
                 break;
             }
         }
@@ -131,37 +130,37 @@ public abstract class AbstractSystemInputParser extends AbstractSystemInputReade
             if (line.isEmpty()) {
                 continue;
             }
-            StringTokenizer scanner = new StringTokenizer(line);
-            if (!scanner.hasMoreTokens()) {
+            Scanner scanner = new Scanner(line);
+            if (!scanner.hasNext()) {
                 continue;
             }
-            String token = scanner.nextToken().toUpperCase();
+            String token = scanner.next().toUpperCase();
             if (!UpdateToken.PATTERN.matcher(token).matches()) {
                 continue;
             }
             UpdateToken updateToken = UpdateToken.valueOf(token);
-            int row = Integer.parseInt(scanner.nextToken());
-            int col = Integer.parseInt(scanner.nextToken());
+            int row = scanner.nextInt();
+            int col = scanner.nextInt();
             switch (updateToken) {
                 case W:
                     addWater(row, col);
                 break;
                 case A:
-                    if (scanner.hasMoreTokens()) {
-                        addAnt(row, col, Integer.parseInt(scanner.nextToken()));
+                    if (scanner.hasNextInt()) {
+                        addAnt(row, col, scanner.nextInt());
                     }
                 break;
                 case F:
                     addFood(row, col);
                 break;
                 case D:
-                    if (scanner.hasMoreTokens()) {
-                        removeAnt(row, col, Integer.parseInt(scanner.nextToken()));
+                    if (scanner.hasNextInt()) {
+                        removeAnt(row, col, scanner.nextInt());
                     }
                 break;
                 case H:
-                    if (scanner.hasMoreTokens()) {
-                        addHill(row, col, Integer.parseInt(scanner.nextToken()));
+                    if (scanner.hasNextInt()) {
+                        addHill(row, col, scanner.nextInt());
                     }
                 break;
             }

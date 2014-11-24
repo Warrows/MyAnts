@@ -1,5 +1,4 @@
-package myia;
-
+package fr.warrows.java.aichallenge;
 /**
  * Represents an order to be issued.
  */
